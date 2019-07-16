@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>Hello World | M1O2O3N</title>
+  <title>M1O2O3N</title>
   <meta name="keywords" content>
-  <meta name="description" content="Hello World | M1O2O3N">
+  <meta name="description" content="M1O2O3N">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="首页 这里是首页测试内容">
 <meta property="og:type" content="article">
@@ -207,9 +207,7 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-    
-        <h1 class="article-title">Hello World</h1>
+        <article id="post-wei_to_html" class="article article-type-post" itemscope itemprop="blogPost">
     
     <div class="article-meta">
         
@@ -219,7 +217,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-07-15 17:47:00'>2019-07-15 17:20</time>
+        创建时间:<time class="date" title='更新时间: 2019-07-13 11:56:05'>2019-07-16 09:15</time>
         
     </div>
     <div class="article-meta">
@@ -241,7 +239,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#首页"><span class="toc-text">首页</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#null"><span class="toc-text">微信转为html</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#null"><span class="toc-text">使用前需要删掉视频，同时此工具无法完全转化。	</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -256,9 +254,71 @@
 </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="首页"><a href="#首页" class="headerlink" title="首页"></a>首页</h2><blockquote>
-<p>这里是首页测试内容</p>
-</blockquote>
+        <!DOCTYPE html>
+<html>
+	<head><meta name="generator" content="Hexo 3.9.0">
+		<meta charset="utf-8">
+		<title></title>
+		
+		<script src="js/jquery.min.js"></script>
+		<script src="js/jquery-ui.min.js"></script>
+		<script src="js/overhang.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/overhang.css">
+		<style type="text/css">
+			.cc_in{
+				width: 48%;
+				height: 300px;
+				float: left;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>微信转为html</h1>
+		<h2>使用前需要删掉视频，同时此工具无法完全转化。	</h2>
+		<div id class="cc">
+			<textarea rows cols class="cc_in" id="weiin" placeholder="这里输入微信内容"></textarea>
+		</div>
+		<div id class="cc">
+			<textarea rows cols class="cc_in" id="htmlout" placeholder="生成html"></textarea>
+		</div>
+		<div id>
+			<button type="button" id="dochange" onclick="weitohtml()" style="width: 80%;height: 80px; margin: 10px 10%;">点击按钮转换</button>
+		</div>
+	</body>
+		
+	<script>
+		htmlheader = '<DIV style="MAX-WIDTH: 680px"><META name="referrer" content="no-referrer" /><STYLE>body>table:nth-child(11)>tbody>tr>td>table:nth-child(3)>tbody>tr>td>table>tbody>tr>td:nth-child(2)>table>tbody>tr>td>table:nth-child(3)>tbody>tr:nth-child(5)>td img{max-width:630px;}</STYLE>';
+		htmlfooter = '</DIV>';
+		
+		function weitohtml(){
+			wei = document.getElementById("weiin").value;
+			html = wei.replace(/section/g,"div");
+			html = html.replace(/Microsoft YaHei&quot;/g,"");
+			html = html.replace(/data-tools="新媒体管家"/g,"");
+			html = html.replace(/data-tools="135编辑器" /g,"");
+			html = html.replace(/data-support="96编辑器" /g,"");
+			html = html.replace(/class="_editor" /g,"");
+			if(html != ""){
+				html = htmlheader + html + htmlfooter
+			}
+			
+			document.getElementById("htmlout").value = html;
+		}
+		
+		//这里是完成提示,懒得修改jQuery了
+		$(function() {
+			$('#dochange').on('click', function() {
+				$('body').overhang({
+					type: 'success',
+					message: '修改完成',
+					closeConfirm: true,
+					duration: 3,
+					upper: true
+				});
+			});
+		});
+	</script>
+</html>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jaytp@qq.com </span>
@@ -272,12 +332,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>Hello World</p>
+    <p><span class="copy-title">文章标题:</span></p>
     
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="Moon">Moon</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-07-15, 17:20:06</p>
-    <p><span class="copy-title">最后更新:</span>2019-07-15, 17:47:00</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/07/15/hello-world/" title="Hello World">http://yoursite.com/2019/07/15/hello-world/</a>
+    <p><span class="copy-title">发布时间:</span>2019-07-16, 09:15:12</p>
+    <p><span class="copy-title">最后更新:</span>2019-07-13, 11:56:05</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/07/16/wei_to_html/" title="">http://yoursite.com/2019/07/16/wei_to_html/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
     </p>
