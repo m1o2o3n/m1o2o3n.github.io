@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		
+		<script src="js/jquery.min.js"></script>
+		<script src="js/jquery-ui.min.js"></script>
+		<script src="js/overhang.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/overhang.css"/>
+		<style type="text/css">
+			.cc_in{
+				width: 48%;
+				height: 300px;
+				float: left;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>微信转为html</h1>
+		<h2>使用前需要删掉视频，同时此工具无法完全转化。	</h2>
+		<div id="" class="cc">
+			<textarea rows="" cols="" class="cc_in" id="weiin" placeholder="这里输入微信内容"></textarea>
+		</div>
+		<div id="" class="cc">
+			<textarea rows="" cols="" class="cc_in" id="htmlout" placeholder="生成html"></textarea>
+		</div>
+		<div id="">
+			<button type="button" id="dochange" onclick="weitohtml()" onclick=" showchange()" style="width: 80%;height: 80px; margin: 10px 10%;">点击按钮转换</button>
+		</div>
+	</body>
+		
+	<script>
+		htmlheader = '<DIV style="MAX-WIDTH: 680px"><META name="referrer" content="no-referrer" /><STYLE>body>table:nth-child(11)>tbody>tr>td>table:nth-child(3)>tbody>tr>td>table>tbody>tr>td:nth-child(2)>table>tbody>tr>td>table:nth-child(3)>tbody>tr:nth-child(5)>td img{max-width:630px;}</STYLE>';
+		htmlfooter = '</DIV>';
+		
+		function weitohtml(){
+			wei = document.getElementById("weiin").value;
+			html = wei.replace(/section/g,"div");
+			html = html.replace(/Microsoft YaHei&quot;/g,"");
+			html = html.replace(/data-tools="新媒体管家"/g,"");
+			html = html.replace(/data-tools="135编辑器" /g,"");
+			html = html.replace(/data-support="96编辑器" /g,"");
+			html = html.replace(/class="_editor" /g,"");
+			if(html != ""){
+				html = htmlheader + html + htmlfooter
+			}
+			
+			document.getElementById("htmlout").value = html;
+		}
+		
+		//这里是完成提示,懒得修改jQuery了
+		$(function() {
+			$('#dochange').on('click', function() {
+				$('body').overhang({
+					type: 'success',
+					message: '修改完成',
+					closeConfirm: true,
+					duration: 3,
+					upper: true
+				});
+			});
+		});
+	</script>
+</html>
