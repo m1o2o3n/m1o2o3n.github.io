@@ -7,6 +7,7 @@
 		<script src="js/jquery.min.js"></script>
 		<script src="js/jquery-ui.min.js"></script>
 		<script src="js/overhang.min.js"></script>
+
 		<link rel="stylesheet" type="text/css" href="css/overhang.css"/>
 		<style type="text/css">
 			.cc_in{
@@ -30,11 +31,15 @@
 		<div id="">
 			<button type="button" id="dochange" onclick="weitohtml()" onclick=" showchange()" style="width: 80%;height: 80px; margin: 10px 10%;">点击按钮转换</button>
 		</div>
+			<textarea rows="" cols="" class="cc_in" id="htmlout" placeholder="生成html"><META name="referrer" content="no-referrer" /><STYLE>body>table:nth-child(11)>tbody>tr>td>table:nth-child(3)>tbody>tr>td>table>tbody>tr>td:nth-child(2)>table>tbody>tr>td>table:nth-child(3)>tbody>tr:nth-child(5)>td img{max-width:630px;}</STYLE></textarea>
+		</div>
+
 	</body>
 		
 	<script>
 		htmlheader = '<DIV style="MAX-WIDTH: 680px"><META name="referrer" content="no-referrer" /><STYLE>body>table:nth-child(11)>tbody>tr>td>table:nth-child(3)>tbody>tr>td>table>tbody>tr>td:nth-child(2)>table>tbody>tr>td>table:nth-child(3)>tbody>tr:nth-child(5)>td img{max-width:630px;}</STYLE>';
 		htmlfooter = '</DIV>';
+		htmlcopy = '<META name="referrer" content="no-referrer" /><STYLE>body>table:nth-child(11)>tbody>tr>td>table:nth-child(3)>tbody>tr>td>table>tbody>tr>td:nth-child(2)>table>tbody>tr>td>table:nth-child(3)>tbody>tr:nth-child(5)>td img{max-width:630px;}</STYLE>'
 		
 		function weitohtml(){
 			wei = document.getElementById("weiin").value;
@@ -51,6 +56,10 @@
 			}
 			
 			document.getElementById("htmlout").value = html;
+		}
+		
+		function docopy(){
+			window.clipboardData.setData("Text",htmlcopy);
 		}
 		
 		//这里是完成提示,懒得修改jQuery了
