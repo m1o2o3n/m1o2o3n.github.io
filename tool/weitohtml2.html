@@ -31,16 +31,13 @@
 		<div id="">
 			<button type="button" id="dochange" onclick="weitohtml()" onclick=" showchange()" style="width: 80%;height: 80px; margin: 10px 10%;">点击按钮转换</button>
 		</div>
-			<textarea rows="" cols="" class="cc_in" id="htmlout" placeholder="生成html"><META name="referrer" content="no-referrer" /><STYLE>body>table:nth-child(11)>tbody>tr>td>table:nth-child(3)>tbody>tr>td>table>tbody>tr>td:nth-child(2)>table>tbody>tr>td>table:nth-child(3)>tbody>tr:nth-child(5)>td img{max-width:630px;}</STYLE></textarea>
-		</div>
-
+		
 	</body>
 		
 	<script>
 		htmlheader = '<div style="max-width:600px;float: none; display: block; margin-left: auto; margin-right: auto;">';
 		htmlfooter = '</div>';
-		htmlcopy = '<META name="referrer" content="no-referrer" /><STYLE>body>table:nth-child(11)>tbody>tr>td>table:nth-child(3)>tbody>tr>td>table>tbody>tr>td:nth-child(2)>table>tbody>tr>td>table:nth-child(3)>tbody>tr:nth-child(5)>td img{max-width:630px;}</STYLE>'
-		
+		//htmlcopy = '<div style="max-width:600px;float: none; display: block; margin-left: auto; margin-right: auto;">  <div>' ；
 		function weitohtml(){
 			wei = document.getElementById("weiin").value;
 			html = wei.replace(/section/g,"div");
